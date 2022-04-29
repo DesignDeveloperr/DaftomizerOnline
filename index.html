@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Daftomizer</title>
+</head>
+<body>
+    <button id="generate">Сгенерировать микс</button>
+    <h1 id="a"></h1>
+    <h1 id="b"></h1>
+    <h1 id="c"></h1>
+
+    <script>
+        (function () {
+
+            const button = document.querySelector('#generate')
+            const a = document.querySelector('#a')
+            const b = document.querySelector('#b')
+            const c = document.querySelector('#c')
+
+            const aItems = [
+                'black curant', 'lazer cola', 'heavy melon',
+                'coconut', 'maracuja', 'cherry juice'
+            ]
+            const bItems = [
+                'grape fizz', 'pink grape fruit', 'brownie',
+                'watermelon', 'cane mint', 'pomegranate'
+            ]
+            const cItems = [
+                'orange zest', 'kiwi tiny', 'apple candy',
+                'elder berry', 'pineapple', 'scotch whisky'
+            ]
+
+            const getRandomItem = array => array[Math.floor(Math.random() * array.length)]
+
+            button.addEventListener('click', () => {
+                a.innerHTML = getRandomItem(aItems).toUpperCase() + ' - 50%'
+                b.innerHTML = getRandomItem(bItems).toUpperCase() + ' - 30%'
+                c.innerHTML = getRandomItem(cItems).toUpperCase() + ' - 20%'
+            })
+
+        })()
+    </script>
+</body>
+</html>
